@@ -40,7 +40,7 @@ class SessionController extends Controller
 
         $query_user = $client->getUser();
 
-        $exist_user = User::where('username',$query_user->getUsername())->get();
+        $exist_user = User::where('username',$query_user->getUsername())->first();
 
         if (!$exist_user)
         {
