@@ -9,6 +9,14 @@ use sxxuz\OAuth2\Client\Provider\EeyesProvider;
 
 class SessionController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('guest',[
+            'only' => ['login'],
+        ]);
+    }
+
     /**
      * Try to get user from oauth
      * If the user does not exist in database
