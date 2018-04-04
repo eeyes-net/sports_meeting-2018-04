@@ -13,3 +13,5 @@
 
 Route::get('login','SessionController@login')->name('login');
 Route::get('logout','SessionController@logout')->name('logout');
+
+Route::resource('news','NewsController');
