@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('login','SessionController@login')->name('login');
+Route::get('logout','SessionController@logout')->name('logout');
