@@ -38,20 +38,22 @@ class SessionController extends Controller
             'scope'        => $scope,
         ]);
 
-        $user = $client->getUser();
+        $query_user = $client->getUser();
 
-        if (User::where('username',$user->getUsername())->get())
+        $exist_user = User::where('username',$query_user->getUsername());
+
+        if (!$exist_user)
         {
-            Auth::login($user);
-        } else {
-            $new_user = User::create([
-                'username' => $user->getUsername(),
-                'user_id'  => $user->getID(),
-                'name'     => $user->getName(),
+            $user = User::create([
+                'username' => $query_user->getUsername(),
+                'user_id'  => $query_user->getID(),
+                'name'     => $query_user->getName(),
             ]);
-
-            Auth::login($new_user);
+        } else {
+            $user = $exist_user;
         }
+
+        Auth::login($user);
 
         return redirect()->intended();
     }
