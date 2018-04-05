@@ -14,4 +14,6 @@
 Route::get('login','SessionController@login')->name('login');
 Route::get('logout','SessionController@logout')->name('logout');
 
+//Route::get('/','StaticPagesController@index')->name('home');
+
 Route::resource('news','NewsController');
