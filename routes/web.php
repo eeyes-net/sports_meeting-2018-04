@@ -11,9 +11,12 @@
 |
 */
 
+/** 主页控制路由 */
+Route::get('/','StaticPagesController@index')->name('home');
+
+/** 资源控制路由 */
+Route::resource('news','NewsController');
+
+/** 登陆控制路由 */
 Route::get('login','SessionController@login')->name('login');
 Route::get('logout','SessionController@logout')->name('logout');
-
-//Route::get('/','StaticPagesController@index')->name('home');
-
-Route::resource('news','NewsController');
