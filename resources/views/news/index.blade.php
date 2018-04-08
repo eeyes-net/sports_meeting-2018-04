@@ -1,8 +1,12 @@
 @extends('layouts.master')
 
+@section('resource')
+    <link rel="stylesheet" href="/css/news.css">
+@stop
+
 @section('content')
     @foreach($news as $new)
-        <div>
+        <div id="news">
             <a href="{{ route('news.show',$new->id) }}">
                 <h5>{{ $new->title }}</h5>
             </a>
