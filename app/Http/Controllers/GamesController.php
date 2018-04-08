@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Games;
+use App\Game;
 use Illuminate\Http\Request;
 
 class GamesController extends Controller
@@ -14,7 +14,7 @@ class GamesController extends Controller
      */
     public function index()
     {
-        $games = Games::select('id','name','partner')->paginate(5);
+        $games = Game::select('id','name','partner')->paginate(5);
 
         return view('games.index',compact('games'));
     }
@@ -44,7 +44,7 @@ class GamesController extends Controller
             'begins_at' => 'required',
         ]);
 
-        $game = Games::create([
+        $game = Game::create([
             'name' => $request->post('name'),
             'class' => $request->post('class'),
             'partner' => $request->post('partner'),
@@ -57,10 +57,10 @@ class GamesController extends Controller
     /**
      * Display the specified game.
      *
-     * @param  \App\Games $game
+     * @param  \App\Game $game
      * @return \Illuminate\Http\Response
      */
-    public function show(Games $game)
+    public function show(Game $game)
     {
         return view('games.show',compact('game'));
     }
@@ -68,10 +68,10 @@ class GamesController extends Controller
     /**
      * Show the form for editing the specified game.
      *
-     * @param  \App\Games $game
+     * @param  \App\Game $game
      * @return \Illuminate\Http\Response
      */
-    public function edit(Games $game)
+    public function edit(Game $game)
     {
         return view('games.edit',compact('game'));
     }
@@ -80,10 +80,10 @@ class GamesController extends Controller
      * Update the specified game in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Games $game
+     * @param  \App\Game $game
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Games $game)
+    public function update(Request $request, Game $game)
     {
         $this->validate($request,[
             'name' => 'required',
@@ -111,11 +111,11 @@ class GamesController extends Controller
     /**
      * Remove the specified game from storage.
      *
-     * @param  \App\Games $game
+     * @param  \App\Game $game
      * @return \Illuminate\Http\Response
      * @throws \Exception
      */
-    public function destroy(Games $game)
+    public function destroy(Game $game)
     {
         $game->delete();
         return back();

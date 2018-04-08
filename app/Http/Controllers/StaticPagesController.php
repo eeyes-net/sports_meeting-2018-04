@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class StaticPagesController extends Controller
 {
-    //
+    public function index()
+    {
+        return view('static_pages.index');
+    }
 }

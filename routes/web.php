@@ -16,6 +16,8 @@ Route::get('/','StaticPagesController@index')->name('home');
 
 /** 资源控制路由 */
 Route::resource('news','NewsController');
+Route::resource('games','GamesController');
+Route::resource('colleges','CollegesController');
 
 /** 登陆控制路由 */
 Route::get('login','SessionController@login')->name('login');
