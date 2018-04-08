@@ -5,14 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\News;
 
-/**
- * Class NewsController
- * @package App\Http\Controllers
- */
 class NewsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the news.
      *
      * @return \Illuminate\Http\Response
      */
@@ -24,7 +20,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new news.
      *
      * @return \Illuminate\Http\Response
      */
@@ -34,7 +30,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created news in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -55,6 +51,8 @@ class NewsController extends Controller
     }
 
     /**
+     * Display the specified news.
+     *
      * @param \App\News $news
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -64,7 +62,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified news.
      *
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response
@@ -75,7 +73,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified news in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\News $news
@@ -101,7 +99,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified news from storage.
      *
      * @param  \App\News $news
      * @return \Illuminate\Http\Response
