@@ -66,7 +66,7 @@ class SessionController extends Controller
     {
         Auth::logout();
         session()->flush();
-        session_destroy();
+        session_unset();
         return redirect('https://cas.xjtu.edu.cn/logout');
     }
 }
