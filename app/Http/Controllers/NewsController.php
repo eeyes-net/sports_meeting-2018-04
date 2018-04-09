@@ -123,4 +123,6 @@ class NewsController extends Controller
         session()->flash('success','新闻删除成功');
         return view('news.index');
     }
+
+    //TODO Set session()->flash()
 }

@@ -110,18 +110,5 @@ class CollegesController extends Controller
         return back();
     }
 
-    /**
-     * Display a listing of the colleges with specified order
-     *
-     * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function getByOrder(Request $request)
-    {
-        $order = $request->post('order');
-
-        $colleges = College::select('id','name',$order)->orderBy($order,'desc');
-
-        return view('colleges.index',compact('colleges'));
-    }
+    //TODO Set session()->flash()
 }

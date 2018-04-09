@@ -8,7 +8,7 @@ namespace App;
  *
  * @property integer $id
  * @property string $name
- * @property string $class
+ * @property integer $class
  * @property string $partner
  * @property string $champion
  * @property timestamp $begins_at

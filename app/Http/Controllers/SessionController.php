@@ -11,6 +11,9 @@ use sxxuz\OAuth2\Client\Provider\EeyesProvider;
 class SessionController extends Controller
 {
 
+    /**
+     * SessionController constructor.
+     */
     public function __construct()
     {
         $this->middleware('guest',[
@@ -55,7 +58,7 @@ class SessionController extends Controller
         }
 
         Auth::login($user);
-
+        session()->flash('success','登陆成功');
         return redirect()->intended('/');
     }
 
