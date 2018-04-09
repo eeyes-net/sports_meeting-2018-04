@@ -8,6 +8,9 @@ use Mews\Purifier\Facades\Purifier;
 
 class NewsController extends Controller
 {
+    /**
+     * NewsController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth.back',[
