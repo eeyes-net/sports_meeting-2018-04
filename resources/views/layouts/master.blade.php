@@ -14,7 +14,7 @@
         @yield('content')
     </div>
 </div>
-<div class="col-md-offset-1 col-md-12">
+<div class="col-md-12">
     @include('layouts._footer')
 </div>
 <script src="/js/app.js"></script>
