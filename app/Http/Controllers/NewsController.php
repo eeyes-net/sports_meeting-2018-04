@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
+use Mews\Purifier\Facades\Purifier;
 
 class NewsController extends Controller
 {
@@ -42,9 +43,10 @@ class NewsController extends Controller
             'content' => 'required',
         ]);
 
+        $content = Purifier::clean($request->post('content'));
         $news = News::create([
             'title' => $request->post('title'),
-            'content' => $request->post('content'),
+            'content' => $content,
         ]);
 
         return redirect()->route('news.show',$news->id);

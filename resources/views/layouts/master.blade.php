@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <title>@yield('title','西安交通大学56届校运会')</title>
     <link rel="stylesheet" href="/css/app.css">
     @yield('resource')
