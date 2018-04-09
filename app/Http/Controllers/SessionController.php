@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use sxxuz\OAuth2\Client\Provider\EeyesProvider;
 
 class SessionController extends Controller
@@ -65,8 +66,8 @@ class SessionController extends Controller
     public function logout()
     {
         Auth::logout();
-        session()->flush();
-        session_unset();
+        Session::flush();
+        Session::save();
         return redirect('https://cas.xjtu.edu.cn/logout');
     }
 }
