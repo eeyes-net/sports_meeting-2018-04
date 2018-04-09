@@ -18,6 +18,7 @@ Route::get('/','StaticPagesController@index')->name('home');
 Route::resource('news','NewsController');
 Route::resource('games','GamesController');
 Route::resource('colleges','CollegesController');
+Route::post('colleges/order','CollegesController@getByOrder')->name('colleges.order'); //POST order 参数 {'ballot'|'medals'} 以获取按order排序的书院
 
 /** 登陆控制路由 */
 Route::get('login','SessionController@login')->name('login');

@@ -8,6 +8,13 @@ use Mews\Purifier\Facades\Purifier;
 
 class NewsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth.back',[
+            'except' => ['index','show']
+        ]);
+    }
+
     /**
      * Display a listing of the news.
      *

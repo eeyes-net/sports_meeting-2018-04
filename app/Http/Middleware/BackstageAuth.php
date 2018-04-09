@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class BackstageAuth
 {
@@ -15,6 +16,14 @@ class BackstageAuth
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        $user = Auth::user()->username;
+        if (in_array($user,config('backstage')))
+        {
+            return $next($request);
+        } else {
+            session()->flash('danger','您不是管理员，不能进行这项操作');
+            return redirect()->route('/');
+        }
+
     }
 }
