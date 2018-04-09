@@ -12,7 +12,7 @@
 */
 
 /** 主页控制路由 */
-Route::get('/','StaticPagesController@index')->name('home');
+Route::get('/','StaticPagesController@index')->name('/');
 
 /** 资源控制路由 */
 Route::resource('news','NewsController');
