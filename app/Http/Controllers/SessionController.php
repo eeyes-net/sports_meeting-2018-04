@@ -65,6 +65,8 @@ class SessionController extends Controller
     public function logout()
     {
         Auth::logout();
+        session()->flush();
+        session_destroy();
         return redirect('https://cas.xjtu.edu.cn/logout');
     }
 }
