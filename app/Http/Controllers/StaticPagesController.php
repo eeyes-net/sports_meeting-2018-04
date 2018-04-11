@@ -15,7 +15,6 @@ class StaticPagesController extends Controller
     public function index()
     {
         $college_medals = College::select('id','name','medals')->get();
-        $college_ballot = College::select('id','name','ballot')->get();
         $news = News::select('id','title')->orderBy('created_at','desc')->get();
         $games_20am_track = Game::where('begins_at','between',['2018-04-20 00:00:00','2018-04-20 11:59:59'])->where('class','1')->orderBy('begins_at','asc')->get();
         $games_20am_field = Game::where('begins_at','between',['2018-04-20 00:00:00','2018-04-20 11:59:59'])->where('class','2')->orderBy('begins_at','asc')->get();
@@ -27,7 +26,7 @@ class StaticPagesController extends Controller
         $games_21pm_field = Game::where('begins_at','between',['2018-04-21 12:00:00','2018-04-21 23:59:59'])->where('class','2')->orderBy('begins_at','asc')->get();
 
 
-        return view('static_pages.index',compact('college_medals','college_ballot','news',
+        return view('static_pages.index',compact('college_medals','news',
             'games_20am_track',
             'games_20am_field',
             'games_20pm_track',

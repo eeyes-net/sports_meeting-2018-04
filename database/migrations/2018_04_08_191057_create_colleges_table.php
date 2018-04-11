@@ -16,7 +16,6 @@ class CreateCollegesTable extends Migration
         Schema::create('colleges', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('ballot')->default(0);
             $table->integer('medals')->default(0);
             $table->timestamps();
         });
