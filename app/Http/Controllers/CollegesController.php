@@ -85,10 +85,6 @@ class CollegesController extends Controller
 
         $data = [];
         $data['name'] = $request->post('name');
-        if ($request->has('ballot'))
-        {
-            $data['ballot'] = $request->post('ballot');
-        }
         if ($request->has('medals'))
         {
             $data['medals'] = $request->post('medals');
