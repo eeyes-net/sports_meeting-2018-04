@@ -35,27 +35,6 @@
                             };
                             editor.create();
                             
-                            // $('#submit').click(function(){
-                            //     let token = $('input[name=\'_token\']').val();
-                            //     let title = $('#title').val();
-                            //     let html = editor.txt.html();
-                            //     let data = {"_token": token,"title": title,"content": html}
-                            //     let dataJSON = JSON.stringify(data,null,4);
-                            //     $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-                            //     $.ajax({
-                            //         type:"post",
-                            //         url:"{{ route('news.store') }}",
-                            //         data:dataJSON,
-                            //         success: function(data){
-                            //             console.log(data);
-                            //             console.log("success");
-                            //         },
-                            //         error: function(error){
-                            //             console.log(error)
-                            //         }
-                            //     })
-                            //     console.log(token+title+html);
-                            // });
                         });
                     </script>
                 </form>

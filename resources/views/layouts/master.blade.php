@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title','西安交通大学56届校运会')</title>
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/common.css">
     @yield('resource')
 </head>
 <body>
 @include('layouts._header')
 <div class="container">
-    <div class="col-md-12">
         @include('shared._message')
         @yield('content')
-    </div>
 </div>
-<div class="col-md-12">
-    @include('layouts._footer')
-</div>
+@include('layouts._footer')
 <script src="/js/app.js"></script>
+<script src="/js/common.js"></script>
+@yield('script')
 </body>
 </html>

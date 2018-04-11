@@ -1,0 +1,122 @@
+
+.main{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/*
+* section-common
+*/
+.sec-top{
+    background: #0066cc;
+    height: 72px;
+}
+.sec-main{
+    padding: 24px;
+}
+.title{
+    font-size: 28px;
+    color:#fff;
+    line-height: 72px;
+    text-align: center;
+    margin:0;
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.content{
+    border:#0066cc 1px solid;
+    padding: 0;
+    margin-top: 36px;
+    box-shadow: 0px 0px 6px 1px;
+    border-radius: 2px;
+}
+
+/*
+* schedule section
+*/
+.date{
+    width: 180px;
+    height: 24px;
+    margin: auto;
+    border-radius: 6px;
+    margin-top: 12px;
+}
+.issue{
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+.left-half{
+    border-radius: 6px 0 0 6px;
+    border: 1px solid;
+}
+.right-half{
+    border-radius: 0 6px 6px 0;
+    border: 1px solid;
+}
+.active{
+    border: 1px solid #0066cc;
+    color: #0066cc;
+}
+.schedule-main{
+    padding: 24px;
+}
+.time-table-body{
+    padding-left: 36px;
+}
+.dot{
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+.arrow{
+    width: 20px;
+    height: 32px;
+    float: left;
+    margin-right: 16px;
+    transform:rotate(0);
+}
+.time-table-section{
+    padding-left: 36px;
+}
+/*
+* news section
+*/
+.sec-main>ul{
+    padding-left: 36px;
+}
+li{
+    list-style: none;
+}
+/*
+* ranks part
+*/
+#title-rank{
+    text-align: center;
+}
+#rank-section{
+    padding: 30px;
+}
+#vote-section{
+    padding: 30px;
+}
+table{
+    width: 100%;
+}
+td{
+    text-align: center;
+}
+.fir-td{
+    width: 30%;
+}
+.sec-td{
+    width: 45%;
+}
+.sec-td{
+    width: 25%;
+}

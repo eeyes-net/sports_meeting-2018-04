@@ -1,5 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/css/news.css": "/css/news.css"
+    "/js/common.js": "/js/common.js",
+    "/css/common.css": "/css/common.css",
+    "/css/news.css": "/css/news.css",
+    "/css/index.css": "/css/index.css",
+    "/css/games.css": "/css/games.css",
+    "/js/index.js": "/js/index.js"
 }
