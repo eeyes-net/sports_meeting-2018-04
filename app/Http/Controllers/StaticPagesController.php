@@ -16,15 +16,14 @@ class StaticPagesController extends Controller
     {
         $college = College::select('id','name','medals')->get();
         $news = News::select('id','title')->orderBy('created_at','desc')->get();
-        $games_20am_track = Game::where('begins_at','between',['2018-04-20 00:00:00','2018-04-20 11:59:59'])->where('class','1')->orderBy('begins_at','asc')->get();
-        $games_20am_field = Game::where('begins_at','between',['2018-04-20 00:00:00','2018-04-20 11:59:59'])->where('class','2')->orderBy('begins_at','asc')->get();
-        $games_20pm_track = Game::where('begins_at','between',['2018-04-20 12:00:00','2018-04-20 23:59:59'])->where('class','1')->orderBy('begins_at','asc')->get();
-        $games_20pm_field = Game::where('begins_at','between',['2018-04-20 12:00:00','2018-04-20 23:59:59'])->where('class','2')->orderBy('begins_at','asc')->get();
-        $games_21am_track = Game::where('begins_at','between',['2018-04-21 00:00:00','2018-04-21 11:59:59'])->where('class','1')->orderBy('begins_at','asc')->get();
-        $games_21am_field = Game::where('begins_at','between',['2018-04-21 00:00:00','2018-04-21 11:59:59'])->where('class','2')->orderBy('begins_at','asc')->get();
-        $games_21pm_track = Game::where('begins_at','between',['2018-04-21 12:00:00','2018-04-21 23:59:59'])->where('class','1')->orderBy('begins_at','asc')->get();
-        $games_21pm_field = Game::where('begins_at','between',['2018-04-21 12:00:00','2018-04-21 23:59:59'])->where('class','2')->orderBy('begins_at','asc')->get();
-
+        $games_20am_track = Game::whereBetween('begins_at',['2018-04-20 00:00:00','2018-04-20 11:59:59'])->where('class','1')->orderBy('begins_at','asc')->select('id','name','partner','champion','begins_at')->get();
+        $games_20am_field = Game::whereBetween('begins_at',['2018-04-20 00:00:00','2018-04-20 11:59:59'])->where('class','2')->orderBy('begins_at','asc')->select('id','name','partner','champion','begins_at')->get();
+        $games_20pm_track = Game::whereBetween('begins_at',['2018-04-20 12:00:00','2018-04-20 23:59:59'])->where('class','1')->orderBy('begins_at','asc')->select('id','name','partner','champion','begins_at')->get();
+        $games_20pm_field = Game::whereBetween('begins_at',['2018-04-20 12:00:00','2018-04-20 23:59:59'])->where('class','2')->orderBy('begins_at','asc')->select('id','name','partner','champion','begins_at')->get();
+        $games_21am_track = Game::whereBetween('begins_at',['2018-04-21 00:00:00','2018-04-21 11:59:59'])->where('class','1')->orderBy('begins_at','asc')->select('id','name','partner','champion','begins_at')->get();
+        $games_21am_field = Game::whereBetween('begins_at',['2018-04-21 00:00:00','2018-04-21 11:59:59'])->where('class','2')->orderBy('begins_at','asc')->select('id','name','partner','champion','begins_at')->get();
+        $games_21pm_track = Game::whereBetween('begins_at',['2018-04-21 12:00:00','2018-04-21 23:59:59'])->where('class','1')->orderBy('begins_at','asc')->select('id','name','partner','champion','begins_at')->get();
+        $games_21pm_field = Game::whereBetween('begins_at',['2018-04-21 12:00:00','2018-04-21 23:59:59'])->where('class','2')->orderBy('begins_at','asc')->select('id','name','partner','champion','begins_at')->get();
 
         return view('static_pages.index',compact('college','news',
             'games_20am_track',
