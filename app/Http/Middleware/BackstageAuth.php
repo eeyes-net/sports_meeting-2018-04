@@ -16,14 +16,18 @@ class BackstageAuth
      */
     public function handle($request, Closure $next)
     {
-        $user = Auth::user()->username;
-        if (in_array($user,config('backstage')))
+        if (Auth::check())
         {
-            return $next($request);
+            $user = Auth::user()->username;
+            if (in_array($user,config('backstage')))
+            {
+                return $next($request);
+            } else {
+                session()->flash('danger','您不是管理员，不能进行这项操作');
+                return redirect()->route('/');
+            }
         } else {
-            session()->flash('danger','您不是管理员，不能进行这项操作');
-            return redirect()->route('/');
+            return redirect()->route('login');
         }
-
     }
 }
