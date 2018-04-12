@@ -17,8 +17,12 @@ class CreateGamesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('class');
-            $table->string('partner');
-            $table->string('champion')->nullable();
+            $table->integer('golden_id')->nullable();
+            $table->string('golden_name')->nullable();
+            $table->integer('silver_id')->nullable();
+            $table->string('silver_name')->nullable();
+            $table->integer('bronze_id')->nullable();
+            $table->string('bronze_name')->nullable();
             $table->timestamp('begins_at');
             $table->timestamps();
         });

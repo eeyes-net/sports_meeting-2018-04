@@ -42,10 +42,10 @@ class CollegesController extends Controller
         ]);
 
         $college = College::create([
-            'name' => 'name',
+            'name' => $request->post('name'),
         ]);
 
-        return redirect()->route('college.show',[$college]);
+        return redirect()->route('colleges.show',[$college]);
     }
 
     /**
@@ -56,7 +56,7 @@ class CollegesController extends Controller
      */
     public function show(College $college)
     {
-        return view('college.show',compact('college'));
+        return view('colleges.show',compact('college'));
     }
 
     /**
@@ -67,7 +67,7 @@ class CollegesController extends Controller
      */
     public function edit(College $college)
     {
-        return view('college.edit',compact('college'));
+        return view('colleges.edit',compact('college'));
     }
 
     /**

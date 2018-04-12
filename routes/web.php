@@ -13,6 +13,7 @@
 
 /** 主页控制路由 */
 Route::get('/','StaticPagesController@index')->name('/');
+Route::get('/admin','StaticPagesController@admin')->name('admin');
 
 /** 资源控制路由 */
 Route::resource('news','NewsController');
@@ -22,3 +23,7 @@ Route::resource('colleges','CollegesController');
 /** 登陆控制路由 */
 Route::get('login','SessionController@login')->name('login');
 Route::get('logout','SessionController@logout')->name('logout');
+
+/** 投票控制路由 */
+Route::get('ballot','BallotController@create')->name('ballot.create');
+Route::post('ballot','BallotController@store')->name('ballot.store');
