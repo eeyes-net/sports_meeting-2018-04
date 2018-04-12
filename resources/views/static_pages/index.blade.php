@@ -18,106 +18,114 @@
                 </div>
                 <div class="schedule-main">
                     <div id="day14" class="show">
-                        <!-- <div id="14morn" class="time-table-day morning m_14">
-                        <h2 class="time-title">14日 上午 径赛</h2>
-                        <div class="time-body">
-                            {foreach ($games_14am_track as $game)}
-                            <section class="time-table-section">
-                                <p>项目：{$game->name|htmlentities}</p>
-                                <p>开始时间：{$game->begin_time|strtotime|date="d日H:i",###|htmlentities}</p>
-                                {if ($game->champion)}
-                                <p>冠军：{$game->champion|htmlentities}</p>
-                                {/if}
-                            </section>
-                            {/foreach}
-                        </div> -->
                         <div id="14morn_tian" class="">
                             <img  src="/static/index/arrow.png" class="arrow">
-                            <h2 class="time-title">14日 上午 田赛</h2>
+                            <h2 class="time-title">20日 上午 田赛</h2>
                             <div class="time-body">
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
+                                @foreach($games_20am_field as $game)
+                                    <section class="time-table-section">
+                                        <img src="/static/index/dot.png" class="dot">
+                                        <p>{{$game->begins_at.'  '.$game->name}}</p>
+                                        <p>冠军：  </p>
+                                    </section>
+                                @endforeach
                             </div>
                         </div>
                         <div id="14morn_jing" class="">
                             <img  src="/static/index/arrow.png" class="arrow">
-                            <h2 class="time-title">14日 上午 径赛</h2>
+                            <h2 class="time-title">20日 上午 径赛</h2>
                             <div class="time-body">
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
+                                @foreach($games_20am_track as $game)
+                                    <section class="time-table-section">
+                                        <img src="/static/index/dot.png" class="dot">
+                                        <p>{{$game->begins_at.'  '.$game->name}}</p>
+                                        <p>冠军：  </p>
+                                    </section>
+                                @endforeach
                             </div>
                         </div>
                         <div id="14after_tian" class="">
                             <img  src="/static/index/arrow.png" class="arrow">
-                            <h2 class="time-title">14日 下午 田赛</h2>
+                            <h2 class="time-title">20日 下午 田赛</h2>
                             <div class="time-body">
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
+                                @foreach($games_20pm_field as $game)
+                                    <section class="time-table-section">
+                                        <img src="/static/index/dot.png" class="dot">
+                                        <p>{{$game->begins_at.'  '.$game->name}}</p>
+                                        <p>冠军：  </p>
+                                    </section>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div id="14after_jing" class="">
+                            <img  src="/static/index/arrow.png" class="arrow">
+                            <h2 class="time-title">20日 下午 径赛</h2>
+                            <div class="time-body">
+                                @foreach($games_20pm_track as $game)
+                                    <section class="time-table-section">
+                                        <img src="/static/index/dot.png" class="dot">
+                                        <p>{{$game->begins_at.'  '.$game->name}}</p>
+                                        <p>冠军：  </p>
+                                    </section>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                     </div>
                     <div id="day15" class="schedule-main hidden">
-                        <div id="14after_tian" class="">
+                        <div id="14morn_tian" class="">
                             <img  src="/static/index/arrow.png" class="arrow">
-                            <h2 class="time-title">15日 下午 田赛</h2>
+                            <h2 class="time-title">21日 上午 田赛</h2>
                             <div class="time-body">
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
-                                <section class="time-table-section">
-                                    <img src="/static/index/dot.png" class="dot">
-                                    <p>10:00 1000米跑步</p>
-                                    <p>冠军：许志轩君</p>
-                                </section>
+                                @foreach($games_21am_field as $game)
+                                    <section class="time-table-section">
+                                        <img src="/static/index/dot.png" class="dot">
+                                        <p>{{$game->begins_at.'  '.$game->name}}</p>
+                                        <p>冠军：  </p>
+                                    </section>
+                                @endforeach
                             </div>
                         </div>
+                        <div id="14morn_jing" class="">
+                            <img  src="/static/index/arrow.png" class="arrow">
+                            <h2 class="time-title">21日 上午 径赛</h2>
+                            <div class="time-body">
+                                @foreach($games_21am_track as $game)
+                                    <section class="time-table-section">
+                                        <img src="/static/index/dot.png" class="dot">
+                                        <p>{{$game->begins_at.'  '.$game->name}}</p>
+                                        <p>冠军：  </p>
+                                    </section>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div id="14after_tian" class="">
+                            <img  src="/static/index/arrow.png" class="arrow">
+                            <h2 class="time-title">21日 下午 田赛</h2>
+                            <div class="time-body">
+                                @foreach($games_21pm_field as $game)
+                                    <section class="time-table-section">
+                                        <img src="/static/index/dot.png" class="dot">
+                                        <p>{{$game->begins_at.'  '.$game->name}}</p>
+                                        <p>冠军：  </p>
+                                    </section>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div id="14after_jing" class="">
+                            <img  src="/static/index/arrow.png" class="arrow">
+                            <h2 class="time-title">21日 下午 径赛</h2>
+                            <div class="time-body">
+                                @foreach($games_21pm_track as $game)
+                                    <section class="time-table-section">
+                                        <img src="/static/index/dot.png" class="dot">
+                                        <p>{{$game->begins_at.'  '.$game->name}}</p>
+                                        <p>冠军：  </p>
+                                    </section>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 </section>
@@ -151,18 +159,15 @@
                                 <tr>
                                     <td class="fir-td">排名</td>
                                     <td class="sec-td">队伍名称</td>
-                                    <td class="third-td">金牌榜（票数）</td>
+                                    <td class="third-td">金牌榜</td>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>仲英书院</td>
-                                    <td>99</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>励志书院</td>
-                                    <td>9</td>
-                                </tr>
+                                @foreach($colleges as $college)
+                                    <tr>
+                                        <td>1</td>
+                                        <td>{{ $college->name }}</td>
+                                        <td>{{ $college->golden()->count() }}</td>
+                                    </tr>
+                                @endforeach
                             </table>
                         </div>
                         <div id="vote-section" class="hidden">
@@ -172,21 +177,13 @@
                                     <td class="sec-td">队伍名称</td>
                                     <td class="third-td">票数</td>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>仲英书院</td>
-                                    <td>99</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>励志书院</td>
-                                    <td>9</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>励志书院</td>
-                                    <td>9</td>
-                                </tr>
+                                @foreach($colleges as $college)
+                                    <tr>
+                                        <td>1</td>
+                                        <td>{{ $college->name }}</td>
+                                        <td>{{ $college->ballot()->count() }}</td>
+                                    </tr>
+                                @endforeach
                             </table>
                         </div>
                     </div>

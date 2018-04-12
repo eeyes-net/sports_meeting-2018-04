@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\College;
 use App\Game;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class GamesController extends Controller
      */
     public function index()
     {
-        $games = Game::select('id','name','partner')->paginate(5);
+        $games = Game::select('id','name','class')->paginate(5);
 
         return view('games.index',compact('games'));
     }
@@ -40,14 +41,12 @@ class GamesController extends Controller
         $this->validate($request,[
             'name' => 'required',
             'class' => 'required',
-            'partner' => 'required',
             'begins_at' => 'required',
         ]);
 
         $game = Game::create([
             'name' => $request->post('name'),
             'class' => $request->post('class'),
-            'partner' => $request->post('partner'),
             'begins_at' => $request->post('begins_at'),
         ]);
 
@@ -73,7 +72,8 @@ class GamesController extends Controller
      */
     public function edit(Game $game)
     {
-        return view('games.edit',compact('game'));
+        $colleges = College::all();
+        return view('games.edit',compact('game','colleges'));
     }
 
     /**
@@ -88,19 +88,37 @@ class GamesController extends Controller
         $this->validate($request,[
             'name' => 'required',
             'class' => 'required',
-            'partner' => 'required',
             'begins_at' => 'required',
         ]);
 
         $data = [];
         $data['name'] = $request->post('name');
         $data['class'] = $request->post('class');
-        $data['partner'] = $request->post('partner');
         $data['begins_at'] = $request->post('begins_at');
 
-        if ($request->has('champion'))
+        if ($request->has('golden'))
         {
-            $data['champion'] = $request->post('champion');
+            $data['golden_id'] = $request->post('golden');
+        }
+        if ($request->has('silver'))
+        {
+            $data['silver_id'] = $request->post('silver');
+        }
+        if ($request->has('bronze'))
+        {
+            $data['bronze_id'] = $request->post('bronze');
+        }
+        if ($request->has('golden_name'))
+        {
+            $data['golden_name'] = $request->post('golden_name');
+        }
+        if ($request->has('silver_name'))
+        {
+            $data['silver_name'] = $request->post('silver_name');
+        }
+        if ($request->has('bronze_name'))
+        {
+            $data['bronze_name'] = $request->post('bronze_name');
         }
 
         $game->update($data);

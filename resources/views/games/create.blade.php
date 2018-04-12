@@ -6,8 +6,9 @@
 
 @section('content')
     <h1 id="title">新建项目的页面</h1>
-
-    <form action="{{ route('games.store') }}">
+    @include('shared._errors')
+    <form action="{{ route('games.store') }}" method="post">
+        {{ csrf_field() }}
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">项目名称</label>
             <div class="col-sm-10">
@@ -24,10 +25,10 @@
             <label for="class" class="col-sm-2 control-label">田径赛</label>
             <div class="col-sm-10">
                 <label class="radio-inline">
-                    <input type="radio" name="track" id="option1" value="2">田赛
+                    <input type="radio" name="class" id="option1" value="2">田赛
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="track" id="option2" value="1">径赛
+                    <input type="radio" name="class" id="option2" value="1">径赛
                 </label>
             </div>
         </div>
