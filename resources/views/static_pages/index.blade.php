@@ -171,7 +171,7 @@
                             </table>
                         </div>
                         <div id="vote-section" class="hidden">
-                        <table>
+                            <table>
                                 <tr>
                                     <td class="fir-td">排名</td>
                                     <td class="sec-td">队伍名称</td>

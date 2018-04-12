@@ -1,6 +1,11 @@
 @extends('layouts.master')
 
+@section('resource')
+    <link rel="stylesheet" href="/css/games.css">
+@stop
+
 @section('content')
+    <a href="{{ route('games.index') }}" class="btn btn-primary nav_btn">返回</a>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h5>{{ $game->name }}</h5>
