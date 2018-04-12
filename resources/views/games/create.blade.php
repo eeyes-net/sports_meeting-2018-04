@@ -7,7 +7,7 @@
 @section('content')
     <h1 id="title">新建项目的页面</h1>
     <!-- 你看下这些name,照着我们改 -->
-    <form action="{{ route('games.store') }}">
+    <form action="{{ route('games.store') }}" method="post">
         <div class="form-group">
             <label for="firstname" class="col-sm-2 control-label">项目名称</label>
             <div class="col-sm-10">
