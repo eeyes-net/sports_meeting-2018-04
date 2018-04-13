@@ -14,7 +14,9 @@ class BallotController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('throttle:1:1');
+        $this->middleware('throttle:1:1',[
+            'only' => 'create',
+        ]);
     }
 
     /**
@@ -31,19 +33,24 @@ class BallotController extends Controller
     }
 
     /**
-     * @param Ballot $ballot
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Ballot $ballot, Request $request)
+    public function store(Request $request)
     {
         $this->validate($request,[
+            'id' => 'required',
             'college' => 'required',
             'token'   => 'required',
         ]);
+
+        $ballot = Ballot::find($request->post('id'));
+
         if ($request->post('token') !== $ballot->token)
         {
             abort('401','非法投票');
+        } elseif($ballot->college_id) {
+            abort('401','此票已失效');
         }
         $ballot->college_id = $request->post('college');
         $ballot->save();

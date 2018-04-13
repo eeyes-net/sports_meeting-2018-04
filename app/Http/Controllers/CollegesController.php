@@ -14,7 +14,7 @@ class CollegesController extends Controller
      */
     public function index()
     {
-        $colleges = College::select('id','name')->get();
+        $colleges = College::all();
 
         return view('colleges.index',compact('colleges'));
     }

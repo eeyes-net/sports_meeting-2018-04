@@ -19,11 +19,8 @@ Route::get('/admin','StaticPagesController@admin')->name('admin');
 Route::resource('news','NewsController');
 Route::resource('games','GamesController');
 Route::resource('colleges','CollegesController');
+Route::resource('ballot','BallotController',['only'=>['create','store']]);
 
 /** 登陆控制路由 */
 Route::get('login','SessionController@login')->name('login');
 Route::get('logout','SessionController@logout')->name('logout');
-
-/** 投票控制路由 */
-Route::get('ballot','BallotController@create')->name('ballot.create');
-Route::post('ballot','BallotController@store')->name('ballot.store');
