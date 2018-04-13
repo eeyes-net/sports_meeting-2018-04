@@ -1,6 +1,12 @@
 @extends('layouts.master')
 
+@section('resource')
+    <link rel="stylesheet" href="/css/games.css">
+@stop
+
 @section('content')
+    <a href="{{ route('games.index') }}" class="btn btn-primary nav_btn">返回</a>
+    <button  class="btn btn-primary nav_btn" data-toggle="modal" data-target="#edit">编辑</button>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h5>{{ $game->name }}</h5>
@@ -54,7 +60,6 @@
                     @endif
                 </h5>
             </div>
-                <!--<a href="{{ route('games.edit',$game->id) }}" class="links">编辑</a>-->
         </div>
     </div>
 @endsection

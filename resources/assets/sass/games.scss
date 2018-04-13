@@ -4,9 +4,34 @@
 #title{
     text-align: center;
 }
+.nav_btn{
+    margin:30px;
+}
+#page{
+    text-align: center;
+}
+/*
+* table
+*/
+#games-table{
+    width: 100%;
+    td{
+        padding: 6px;
+    }
+}
+
 /*
 * create
 */
 .form-group{
     height: 48px;
+}
+
+/*
+* edit 
+*/
+.form-part{
+    display: block;
+    padding: 30px;
+    margin: 30px;
 }

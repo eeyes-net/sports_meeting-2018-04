@@ -1,7 +1,12 @@
 @extends('layouts.master')
 
+@section('resource')
+    <link rel="stylesheet" href="/css/college.css">
+@stop
+
 @section('content')
     <div class="col-md-offset-2 col-md-8">
+        <a href="{{ route('colleges.create') }}" class="btn btn-primary">新建书院</a>
         <h1>所有书院</h1>
         <ul>
             <div class="row">

@@ -18,4 +18,5 @@ mix.js('resources/assets/js/common.js', 'public/js')
    .sass('resources/assets/sass/news.scss', 'public/css')
    .sass('resources/assets/sass/index.scss','public/css')
    .sass('resources/assets/sass/games.scss','public/css')
+   .sass('resources/assets/sass/college.scss','public/css')
 ;
