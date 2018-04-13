@@ -38,8 +38,21 @@ class College extends Model
         return $this->hasMany('App\Game','bronze_id');
     }
 
-    public function golden_count()
+    public function ballot()
     {
-        return self::golden()->count();
+        return $this->hasMany('App\Ballot');
+    }
+
+    /**
+     * @return float|int
+     */
+    public function medals_count()
+    {
+        $golden_count = $this->golden->count();
+        $silver_count = $this->silver->count();
+        $bronze_count = $this->bronze->count();
+        $medals_count = 3*$golden_count+2*$silver_count+$bronze_count;
+
+        return $medals_count;
     }
 }
