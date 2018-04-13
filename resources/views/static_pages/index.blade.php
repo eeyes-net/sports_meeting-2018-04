@@ -181,7 +181,7 @@
                                     <tr>
                                         <td>1</td>
                                         <td>{{ $college->name }}</td>
-                                        <td>{{ $college->ballot()->count() }}</td>
+                                        {{-- <td>{{ $college->ballot()->count() }}</td> --}}
                                     </tr>
                                 @endforeach
                             </table>

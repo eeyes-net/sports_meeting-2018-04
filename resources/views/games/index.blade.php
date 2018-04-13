@@ -63,7 +63,7 @@
                        </form>
                     </td>
                     <td>
-                        <button class="btn btn-primary">编辑</button>
+                        <a href="{{ route('games.edit',$game->id) }}" class="btn btn-primary">修改</a>
                     </td>
                 </tr>
                 @endforeach
