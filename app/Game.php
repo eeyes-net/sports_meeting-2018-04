@@ -25,7 +25,7 @@ class Game extends Model
      */
     public function golden()
     {
-        return $this->belongsTo('App\College');
+        return $this->belongsTo('App\College','golden_id');
     }
 
     /**
@@ -33,7 +33,7 @@ class Game extends Model
      */
     public function silver()
     {
-        return $this->belongsTo('App\College');
+        return $this->belongsTo('App\College','silver_id');
     }
 
     /**
@@ -41,7 +41,7 @@ class Game extends Model
      */
     public function bronze()
     {
-        return $this->belongsTo('App\College');
+        return $this->belongsTo('App\College','bronze_id');
     }
 
     /**

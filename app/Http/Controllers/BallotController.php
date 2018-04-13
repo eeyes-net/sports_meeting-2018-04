@@ -9,11 +9,18 @@ use Faker\Generator as Faker;
 
 class BallotController extends Controller
 {
+    /**
+     * BallotController constructor.
+     */
     public function __construct()
     {
         $this->middleware('throttle:1:1');
     }
 
+    /**
+     * @param Faker $faker
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create(Faker $faker)
     {
         $ballot = Ballot::create([
@@ -23,10 +30,16 @@ class BallotController extends Controller
         return view('ballot.create',compact('ballot','colleges'));
     }
 
-    public function store(Ballot $ballot,Request $request)
+    /**
+     * @param Ballot $ballot
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store(Ballot $ballot, Request $request)
     {
         $this->validate($request,[
             'college' => 'required',
+            'token'   => 'required',
         ]);
         if ($request->post('token') !== $ballot->token)
         {

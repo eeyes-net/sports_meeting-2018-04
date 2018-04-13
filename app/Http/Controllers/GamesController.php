@@ -16,7 +16,7 @@ class GamesController extends Controller
     public function index()
     {
         $games = Game::select('id','name','class')->paginate(5);
-
+        dd($games);
         return view('games.index',compact('games'));
     }
 
