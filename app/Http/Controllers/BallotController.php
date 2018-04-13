@@ -39,12 +39,11 @@ class BallotController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'id' => 'required',
             'college' => 'required',
             'token'   => 'required',
         ]);
 
-        $ballot = Ballot::find($request->post('id'));
+        $ballot = Ballot::find($request->get('id'));
 
         if ($request->post('token') !== $ballot->token)
         {

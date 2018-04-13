@@ -6,13 +6,10 @@
             <h5>投票</h5>
         </div>
         <div class="panel-body">
-            <form action="{{ route('ballot.store',$ballot->id) }}" method="post">
+            <form action="{{ route('ballot.store').'?id='.$ballot->id }}" method="post">
                 {{ csrf_field() }}
                 <div class="hidden">
                     <input type="text" name="token" value="{{ $ballot->token }}" hidden>
-                </div>
-                <div class="hidden">
-                    <input type="text" name="id" value="{{ $ballot->id }}" hidden>
                 </div>
                 <div class="form-group">
                     <label for="college">投票给</label>
@@ -21,8 +18,8 @@
                             <option value=" {{$college->id}} ">{{ $college->name }}</option>
                         @endforeach
                     </select>
-                    <button type="submit" class="btn btn-primary">投票</button>
                 </div>
+                <button type="submit" class="btn btn-primary">投票</button>
             </form>
         </div>
     </div>
