@@ -19,7 +19,6 @@
                         <lable for="content">内容：</lable>
                         <input type="text" name="content" class="form-control" value="{{ $news->content }}">
                     </div>
-
                     <button type="submit" class="btn btn-primary">提交</button>
                 </form>
             </div>

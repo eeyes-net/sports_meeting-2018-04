@@ -26,7 +26,11 @@
                                     <section class="time-table-section">
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
-                                        <p>冠军：  </p>
+                                        @if($game->golden_id)
+                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                        @else
+                                            冠军：    暂无数据
+                                        @endif
                                     </section>
                                 @endforeach
                             </div>
@@ -39,7 +43,11 @@
                                     <section class="time-table-section">
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
-                                        <p>冠军：  </p>
+                                        @if($game->golden_id)
+                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                        @else
+                                            冠军：    暂无数据
+                                        @endif
                                     </section>
                                 @endforeach
                             </div>
@@ -52,7 +60,11 @@
                                     <section class="time-table-section">
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
-                                        <p>冠军：  </p>
+                                        @if($game->golden_id)
+                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                        @else
+                                            冠军：    暂无数据
+                                        @endif
                                     </section>
                                 @endforeach
                             </div>
@@ -65,7 +77,11 @@
                                     <section class="time-table-section">
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
-                                        <p>冠军：  </p>
+                                        @if($game->golden_id)
+                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                        @else
+                                            冠军：    暂无数据
+                                        @endif
                                     </section>
                                 @endforeach
                             </div>
@@ -81,7 +97,11 @@
                                     <section class="time-table-section">
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
-                                        <p>冠军：  </p>
+                                        @if($game->golden_id)
+                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                        @else
+                                            冠军：    暂无数据
+                                        @endif
                                     </section>
                                 @endforeach
                             </div>
@@ -94,7 +114,11 @@
                                     <section class="time-table-section">
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
-                                        <p>冠军：  </p>
+                                        @if($game->golden_id)
+                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                        @else
+                                            冠军：    暂无数据
+                                        @endif
                                     </section>
                                 @endforeach
                             </div>
@@ -107,7 +131,11 @@
                                     <section class="time-table-section">
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
-                                        <p>冠军：  </p>
+                                        @if($game->golden_id)
+                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                        @else
+                                            冠军：    暂无数据
+                                        @endif
                                     </section>
                                 @endforeach
                             </div>
@@ -120,7 +148,11 @@
                                     <section class="time-table-section">
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
-                                        <p>冠军：  </p>
+                                        @if($game->golden_id)
+                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                        @else
+                                            冠军：    暂无数据
+                                        @endif
                                     </section>
                                 @endforeach
                             </div>

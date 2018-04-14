@@ -34,7 +34,7 @@
                 <h5 class="col-md-3">金牌</h5>
                 <h5 class="col-md-9">
                     @if($game->golden_id)
-                        {{ $game->golden()->name }}
+                        {{ $game->golden->name }}{{ $game->golden_name   }}
                         @else
                         暂无数据
                     @endif
@@ -44,7 +44,7 @@
                 <h5 class="col-md-3">银牌</h5>
                 <h5 class="col-md-9">
                     @if($game->silver_id )
-                        {{ $game->silver()->name }}
+                        {{ $game->silver->name }}{{ $game->silver_name }}
                         @else
                         暂无数据
                     @endif
@@ -54,7 +54,7 @@
                 <h5 class="col-md-3">铜牌</h5>
                 <h5 class="col-md-9">
                     @if($game->bronze_id)
-                        {{ $game->bronze()->name }}
+                        {{ $game->bronze->name }} {{ $game->bronze_name }}
                         @else
                         暂无数据
                     @endif

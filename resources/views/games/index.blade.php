@@ -35,22 +35,22 @@
                         @endif
                     </td>
                     <td>
-                        @if($game->golden_id)
-                            {{ $game->golden()->name }}
+                        @if($game->golden_name)
+                            {{ $game->golden_name }}
                             @else
                             暂无数据
                         @endif
                     </td>
                     <td>
-                        @if($game->silver_id )
-                            {{ $game->silver()->name }}
+                        @if($game->silver_name )
+                            {{ $game->silver_name }}
                             @else
                             暂无数据
                         @endif
                     </td>
                     <td>
-                        @if($game->bronze_id)
-                            {{ $game->bronze()->name }}
+                        @if($game->bronze_name)
+                            {{ $game->bronze_name }}
                             @else
                             暂无数据
                         @endif

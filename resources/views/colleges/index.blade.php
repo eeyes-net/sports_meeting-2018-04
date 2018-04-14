@@ -5,6 +5,7 @@
 @stop
 
 @section('content')
+    <h1 id="title">后台书院管理</h1>
     <div class="col-md-offset-2 col-md-8">
         <a href="{{ route('colleges.create') }}" class="btn btn-primary">新建书院</a>
         <h1>所有书院</h1>
