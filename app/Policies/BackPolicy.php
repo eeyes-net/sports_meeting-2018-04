@@ -10,8 +10,8 @@ class BackPolicy
 {
     use HandlesAuthorization;
 
-    public function admin(User $user)
+    public function admin(User $currentUser)
     {
-        return in_array($user->username,config('backstage'));
+        return in_array($currentUser->username,config('backstage'));
     }
 }

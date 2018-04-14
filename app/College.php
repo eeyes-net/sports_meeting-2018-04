@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-use phpDocumentor\Reflection\Types\Self_;
 
 /**
  * Class College
