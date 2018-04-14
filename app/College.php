@@ -37,6 +37,9 @@ class College extends Model
         return $this->hasMany('App\Game','bronze_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function ballot()
     {
         return $this->hasMany('App\Ballot');

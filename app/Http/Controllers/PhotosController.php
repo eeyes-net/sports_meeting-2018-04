@@ -19,7 +19,7 @@ class PhotosController extends Controller
         if ($request->hasFile('photo') && $request->file('photo')->isValid())
         {
             $photo = Photo::create([
-                'path' => $request->file('photo')->storePublicly('photo'),
+                'path' => $request->file('photo')->store('photo','public'),
             ]);
 
             return response()->json([
@@ -27,6 +27,10 @@ class PhotosController extends Controller
                 'data'  => [$photo->path],
             ]);
         }
+
+        return response()->json([
+            'errno' => '400',
+        ]);
     }
 
     /**
