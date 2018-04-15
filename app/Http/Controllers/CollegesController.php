@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class CollegesController extends Controller
 {
+    /**
+     * CollegesController constructor.gi
+     */
     public function __construct()
     {
         $this->middleware('auth.back',[

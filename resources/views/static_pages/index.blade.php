@@ -13,8 +13,8 @@
             </div>
             <div class="sec-main">
                 <div class="date">
-                    <div id="d14" class="issue active left-half">14日</div>
-                    <div id="d15" class="issue right-half">15日</div>
+                    <div id="d14" class="issue active left-half">20日</div>
+                    <div id="d15" class="issue right-half">21日</div>
                 </div>
                 <div class="schedule-main" id="con_14">
                     <div id="day14" class="show">
