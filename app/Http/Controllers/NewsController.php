@@ -59,6 +59,7 @@ class NewsController extends Controller
             'content' => $content,
         ]);
 
+        session()->flash('success','新闻创建成功');
         return redirect()->route('news.show',$news->id);
     }
 
@@ -120,9 +121,7 @@ class NewsController extends Controller
     public function destroy(News $news)
     {
         $news->delete();
-        session()->flash('success','新闻删除成功');
+        session()->flash('danger','新闻删除成功');
         return view('news.index');
     }
-
-    //TODO Set session()->flash()
 }

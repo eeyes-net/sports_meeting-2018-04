@@ -9,6 +9,16 @@ use Illuminate\Http\Request;
 class GamesController extends Controller
 {
     /**
+     * GamesController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth.back',[
+            'except' => ['index','show'],
+        ]);
+    }
+
+    /**
      * Display a listing of the games.
      *
      * @return \Illuminate\Http\Response
@@ -50,6 +60,7 @@ class GamesController extends Controller
             'begins_at' => $request->post('begins_at'),
         ]);
 
+        session()->flash('success','赛事创建成功');
         return redirect()->route('games.show',[$game]);
     }
 
@@ -123,6 +134,7 @@ class GamesController extends Controller
 
         $game->update($data);
 
+        session()->flash('success','赛事更新成功');
         return redirect()->route('games.show',$game->id);
     }
 
@@ -136,8 +148,7 @@ class GamesController extends Controller
     public function destroy(Game $game)
     {
         $game->delete();
+        session()->flash('danger','赛事删除成功');
         return back();
     }
-
-    //TODO Set sesssion()->flash();
 }

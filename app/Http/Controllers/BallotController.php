@@ -48,7 +48,7 @@ class BallotController extends Controller
         if ($request->post('token') !== $ballot->token)
         {
             abort('401','非法投票');
-        } elseif($ballot->college_id) {
+        } elseif ($ballot->college_id) {
             abort('401','此票已失效');
         }
         $ballot->college_id = $request->post('college');
