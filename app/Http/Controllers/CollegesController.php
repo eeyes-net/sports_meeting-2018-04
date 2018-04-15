@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class CollegesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth.back',[
+            'except' => ['index','show'],
+        ]);
+    }
+
     /**
      * Display a listing of the colleges.
      *
@@ -45,6 +52,7 @@ class CollegesController extends Controller
             'name' => $request->post('name'),
         ]);
 
+        session()->flash('success','书院创建成功');
         return redirect()->route('colleges.show',[$college]);
     }
 
@@ -90,6 +98,7 @@ class CollegesController extends Controller
             $data['medals'] = $request->post('medals');
         }
 
+        session()->flash('success','书院信息更新成功');
         return redirect()->route('colleges.show',$college->id);
     }
 
@@ -103,6 +112,7 @@ class CollegesController extends Controller
     public function destroy(College $college)
     {
         $college->delete();
+        session()->flash('danger','书院删除成功');
         return back();
     }
 
