@@ -1,15 +1,12 @@
 /*
 *   news-part
 */
-
-#news{
-    background: gray;
-}
-
 .news-create{
     margin: 30px;
 }
-
+.news_title{
+    font-size: 3rem;
+}
 /*
 *   create-part
 */
@@ -26,4 +23,12 @@
 
 #submit{
    width: 14rem;
+}
+#news_content{
+    p{
+        font-size: 36px;
+    }
+    h1{
+        font-size:48px;
+    }
 }

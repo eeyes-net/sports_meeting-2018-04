@@ -17,17 +17,6 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="firstname" class="col-sm-2 control-label">日期</label>
-            <div class="col-sm-10">
-                <label class="radio-inline">
-                    <input type="radio" name="date" id="option1" value="option1">14日
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="date" id="option2" value="option2">15日
-                </label>
-            </div>
-        </div>
-        <div class="form-group">
             <label for="firstname" class="col-sm-2 control-label">开始时间</label>
             <div class="col-sm-10">
                 <input type="datetime-local" class="form-control" name="begins_at" placeholder="请输入名字">

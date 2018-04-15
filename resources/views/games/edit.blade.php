@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group form-part">
                     <label for="begins_at">开始时间</label>
-                    <input type="datetime-local" name="begins_at" class="form-control" id="begins_at" value="{{ $game->begins_at->toDateTimeString() }}">
+                    <input type="datetime-local" name="begins_at" class="form-control" id="begins_at" value="{{ $game->begins_at->toDateString().'T'.$game->begins_at->toTimeString() }}">
                 </div>
                 <div class="form-group form-part">
                     <label for="class" class="col-sm-2 control-label">田径赛</label>
@@ -93,4 +93,12 @@
             </form>
         </div>
     </div>
+    <script>
+        var time = '{{ $game->begins_at->toDateTimeString() }}';
+        time =  time.toString();
+        console.log(time)
+        time.indexOf(10) = ":";
+        console.log(time)
+        
+    </script>
 @endsection

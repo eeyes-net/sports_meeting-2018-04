@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="main">
-        <a href="#" class="btn btn-primary btn-lg center-block" style="width:60%;background:#0066cc;">进入直播</a>
+        <a href="#" class="btn btn-primary btn-lg center-block" style="width:60%;font-size:36px;background:#0066cc;">进入直播</a>
         <section id="schedule" class="content">
             <div class="sec-top">
                 <h2 class="title">赛程</h2>
@@ -16,7 +16,7 @@
                     <div id="d14" class="issue active left-half">14日</div>
                     <div id="d15" class="issue right-half">15日</div>
                 </div>
-                <div class="schedule-main">
+                <div class="schedule-main" id="con_14">
                     <div id="day14" class="show">
                         <div id="14morn_tian" class="">
                             <img  src="/static/index/arrow.png" class="arrow">
@@ -27,9 +27,9 @@
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
                                         @if($game->golden_id)
-                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                            <p>冠军：    {{ $game->golden->name .'      '. $game->golden_name   }}</p>
                                         @else
-                                            冠军：    暂无数据
+                                             <p>冠军：    暂无数据</p>
                                         @endif
                                     </section>
                                 @endforeach
@@ -44,9 +44,9 @@
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
                                         @if($game->golden_id)
-                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                            <p>冠军：    {{ $game->golden->name .'      '. $game->golden_name   }}</p>
                                         @else
-                                            冠军：    暂无数据
+                                            <p></p>
                                         @endif
                                     </section>
                                 @endforeach
@@ -61,9 +61,9 @@
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
                                         @if($game->golden_id)
-                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                            <p>冠军：    {{ $game->golden->name .'      '. $game->golden_name   }}</p>
                                         @else
-                                            冠军：    暂无数据
+                                            <p></p>
                                         @endif
                                     </section>
                                 @endforeach
@@ -78,9 +78,9 @@
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
                                         @if($game->golden_id)
-                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                            <p>冠军：    {{ $game->golden->name .'      '. $game->golden_name   }}</p>
                                         @else
-                                            冠军：    暂无数据
+                                            <p></p>
                                         @endif
                                     </section>
                                 @endforeach
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     </div>
-                    <div id="day15" class="schedule-main hidden">
+                    <div id="day15" class="schedule-main hidden" id="con_15">
                         <div id="14morn_tian" class="">
                             <img  src="/static/index/arrow.png" class="arrow">
                             <h2 class="time-title">21日 上午 田赛</h2>
@@ -98,9 +98,9 @@
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
                                         @if($game->golden_id)
-                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                            <p>冠军：    {{ $game->golden->name .'      '. $game->golden_name   }}</p>
                                         @else
-                                            冠军：    暂无数据
+                                            <p></p>
                                         @endif
                                     </section>
                                 @endforeach
@@ -115,9 +115,9 @@
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
                                         @if($game->golden_id)
-                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                            <p>冠军：    {{ $game->golden->name .'      '. $game->golden_name   }}</p>
                                         @else
-                                            冠军：    暂无数据
+                                            <p></p>
                                         @endif
                                     </section>
                                 @endforeach
@@ -132,9 +132,9 @@
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
                                         @if($game->golden_id)
-                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                            <p>冠军：    {{ $game->golden->name .'      '. $game->golden_name   }}</p>
                                         @else
-                                            冠军：    暂无数据
+                                            <p></p>
                                         @endif
                                     </section>
                                 @endforeach
@@ -149,9 +149,9 @@
                                         <img src="/static/index/dot.png" class="dot">
                                         <p>{{$game->begins_at.'  '.$game->name}}</p>
                                         @if($game->golden_id)
-                                            <p>冠军：    {{ $game->golden->name }}{{ $game->golden_name   }}</p>
+                                            <p>冠军：    {{ $game->golden->name .'      '. $game->golden_name   }}</p>
                                         @else
-                                            冠军：    暂无数据
+                                            <p></p>
                                         @endif
                                     </section>
                                 @endforeach
@@ -168,7 +168,7 @@
                     <div class="sec-main">
                         <ul>
                             @foreach($news as $new)
-                                <li id="news">
+                                <li class="news">
                                     <a href="{{ route('news.show',$new->id) }}">
                                         <h3>{{ $new->title }}</h3>
                                     </a>

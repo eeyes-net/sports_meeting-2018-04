@@ -18,11 +18,6 @@
                     {{ csrf_field() }}
                     <input type="text" class="form-control" name="title" id="title" placeholder="在这里输入标题">
                     <input type="text" class="hidden" id="content" name="content" value="空">
-                    <div id="uploadContainer">
-                        <input type="button" value="选择文件" id="btnBrowse">
-                        <input type="button" value="上传文件" id="btnUpload">
-                        <ul id="fileList"></ul>
-                    </div>
                     <div id="editor" name="content">
                         <p>在这里输入新闻内容……</p>
                     </div>
@@ -41,7 +36,7 @@
 
                             editor.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
 
-                            editor.customConfig.uploadImgMaxLength = 5;
+                            editor.customConfig.uploadImgMaxLength = 30;
 
                             editor.customConfig.uploadFileName = 'photo';
 

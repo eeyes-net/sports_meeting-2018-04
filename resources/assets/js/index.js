@@ -1,12 +1,14 @@
 (function   ()  {
     $('.time-body').hide();
     $('#d14').on('click',function(){
+        $('#con_14').css({'padding':'24'});
         $(this).addClass('active');
         $('#day14').removeClass('hidden').addClass('show');
         $('#day15').removeClass('show').addClass('hidden');
         $('#d15').removeClass('active');
     })
     $('#d15').on('click',function(){
+        $('#con_14').css({'padding':'0'});
         $(this).addClass('active');
         $('#day15').removeClass('hidden').addClass('show');
         $('#day14').removeClass('show').addClass('hidden');
@@ -28,7 +30,6 @@
     })
     $('.time-title').on('click',function(){
         if($(this).prev().css('transform') == 'matrix(6.12323e-17, 1, -1, 6.12323e-17, 0, 0)'){
-            console.log("ff")
             $(this).prev().css({
                 'transform':'rotate(0)',
                 '-webkit-transform':'rotate(0)',
