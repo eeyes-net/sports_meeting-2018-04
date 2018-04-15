@@ -16,8 +16,7 @@
                     <div id="d14" class="issue active left-half">20日</div>
                     <div id="d15" class="issue right-half">21日</div>
                 </div>
-                <div class="schedule-main" id="con_14">
-                    <div id="day14" class="show">
+                    <div id="day14" class="schedule-main show">
                         <div id="14morn_tian" class="">
                             <img  src="/static/index/arrow.png" class="arrow">
                             <h2 class="time-title">20日 上午 田赛</h2>
@@ -86,7 +85,6 @@
                                 @endforeach
                             </div>
                         </div>
-                    </div>
                     </div>
                     <div id="day15" class="schedule-main hidden" id="con_15">
                         <div id="14morn_tian" class="">
@@ -159,7 +157,6 @@
                         </div>
                     </div>
                     </div>
-                </div>
                 </section>
                 <section id="news" class="content">
                     <div class="sec-top">
