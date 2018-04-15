@@ -70,6 +70,6 @@ class SessionController extends Controller
         Auth::logout();
         Session::flush();
         Session::save();
-        return redirect('https://cas.xjtu.edu.cn/logout');
+        return redirect('https://account.eeyes.net/logout?url='.urlencode(url('/')));
     }
 }

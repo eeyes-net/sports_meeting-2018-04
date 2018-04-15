@@ -25,6 +25,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('admin','BackPolicy@admin');
+        Gate::define('admin',function ($currentUser){
+                return in_array($currentUser->username,config('backstage'));
+        });
     }
 }

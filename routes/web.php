@@ -23,4 +23,4 @@ Route::resource('ballot','BallotController',['only'=>['create','store']]);
 
 /** 登陆控制路由 */
 Route::get('login','SessionController@login')->name('login');
-Route::get('logout','SessionController@logout')->name('logout');
+Route::post('logout','SessionController@logout')->name('logout');
