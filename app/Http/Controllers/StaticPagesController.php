@@ -16,7 +16,7 @@ class StaticPagesController extends Controller
     {
         $this->middleware('auth.back',[
             'only' => ['admin'],
-        ])
+        ]);
     }
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
