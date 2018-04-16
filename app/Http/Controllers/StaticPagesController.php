@@ -10,6 +10,15 @@ use App\News;
 class StaticPagesController extends Controller
 {
     /**
+     * StaticPagesController Constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth.back',[
+            'only' => ['admin'],
+        ])
+    }
+    /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
