@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="main">
-        <a href="#" class="btn btn-primary btn-lg center-block" style="width:60%;font-size:36px;background:#0066cc;">进入直播</a>
+        <a href="http://live.eeyes.net/" class="btn btn-primary btn-lg center-block" style="width:60%;font-size:36px;background:#0066cc;">进入直播</a>
         <section id="schedule" class="content">
             <div class="sec-top">
                 <h2 class="title">赛程</h2>

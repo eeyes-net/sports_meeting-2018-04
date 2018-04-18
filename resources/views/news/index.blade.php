@@ -14,6 +14,13 @@
             <a href="{{ route('news.show',$new->id) }}">
                 <h5 class="news_title">{{ $new->title }}</h5>
             </a>
+            @can('admin')
+                <form action="{{ route('news.destroy',$new->id) }}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button type="submit" class="btn btn-danger">删除</button>
+                </form>
+            @endcan
         </div>
     @endforeach
 @endsection
