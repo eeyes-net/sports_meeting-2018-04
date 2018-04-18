@@ -15,3 +15,5 @@ use Illuminate\Http\Request;
 
 Route::post('photo','PhotosController@store')->name('photo.store');
 Route::delete('photo/{photo}','PhotosController@destroy')->name('photo.destroy');
+
+Route::get('colleges','CollegesController@json');

@@ -23,7 +23,6 @@ class StaticPagesController extends Controller
      */
     public function index()
     {
-        $colleges = College::select('id','name')->get();
         $news = News::select('id','title')->orderBy('created_at','desc')->get();
         $games_20am_track = Game::whereBetween('begins_at',['2018-04-20 00:00:00','2018-04-20 11:59:59'])->where('class','1')->orderBy('begins_at','asc')->get();
         $games_20am_field = Game::whereBetween('begins_at',['2018-04-20 00:00:00','2018-04-20 11:59:59'])->where('class','2')->orderBy('begins_at','asc')->get();

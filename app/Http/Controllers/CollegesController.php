@@ -13,7 +13,7 @@ class CollegesController extends Controller
     public function __construct()
     {
         $this->middleware('auth.back',[
-            'except' => ['index','show'],
+            'except' => ['index','show','json'],
         ]);
     }
 
@@ -119,5 +119,12 @@ class CollegesController extends Controller
         return back();
     }
 
-    //TODO Set session()->flash()
+    public function json()
+    {
+        $colleges = College::with('golden','silver','bronze')->get();
+        return response()->json([
+            'code' => 200,
+            'data' => $colleges,
+        ]);
+    }
 }
