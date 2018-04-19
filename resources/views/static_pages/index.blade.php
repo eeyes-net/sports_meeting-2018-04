@@ -180,8 +180,8 @@
                     </div>
                     <div class="sec-main">
                         <div class="date">
-                            <div id="modal-rank" class="issue active left-half">奖牌榜</div>
-                            <div id="vote-rank" class="issue right-half">投票榜</div>
+                            <div id="modal-rank" class="modal-title active">奖牌榜</div>
+                            
                         </div>
                         <div id="rank-section">
                             <table>
@@ -190,29 +190,6 @@
                                     <td class="sec-td">队伍名称</td>
                                     <td class="third-td">金牌榜</td>
                                 </tr>
-                                @foreach($colleges as $college)
-                                    <tr>
-                                        <td>1</td>
-                                        <td>{{ $college->name }}</td>
-                                        <td>{{ $college->golden()->count() }}</td>
-                                    </tr>
-                                @endforeach
-                            </table>
-                        </div>
-                        <div id="vote-section" class="hidden">
-                            <table>
-                                <tr>
-                                    <td class="fir-td">排名</td>
-                                    <td class="sec-td">队伍名称</td>
-                                    <td class="third-td">票数</td>
-                                </tr>
-                                @foreach($colleges as $college)
-                                    <tr>
-                                        <td>1</td>
-                                        <td>{{ $college->name }}</td>
-                                        {{-- <td>{{ $college->ballot()->count() }}</td> --}}
-                                    </tr>
-                                @endforeach
                             </table>
                         </div>
                     </div>

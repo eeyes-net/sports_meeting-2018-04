@@ -41,4 +41,35 @@
         console.log( $(this).prev().css('transform'));
         $(this).next().toggle();
     })
+    //rank
+    function sortNum(property){
+        return function(a,b){
+            let value1 = a[property];
+            let value2 = b[property];
+            return value1 - value2;
+        }
+    }
+    //rank by golds
+    $.ajax({
+        type:'get',
+        url:'../api/colleges',
+        success: function(msg){
+            var colleges = msg.data;
+            colleges = colleges.sort(sortNum('golden.length'));
+            console.log(colleges.sort(sortNum('golden.length')));
+            //new nodes
+            for(let i=0;i<colleges.length;i++){
+                colleges[i].index = i+1;
+                if(i>0){
+                    if(colleges[i].golden.length == colleges[i-1].golden.length)
+                        colleges[i].index = colleges[i-1].index;
+                }
+                let index = colleges[i].index;
+                let name = colleges[i].name;
+                let golden = colleges[i].golden.length;
+                let $td = `<tr ><td class='fir-td'> ${index} </td><td class='sec-td'> ${name} </td><td class='third-td'> ${golden} </td></tr>`;
+                $('#rank-section>table').append($td);
+            }
+        }
+    })
 })();
