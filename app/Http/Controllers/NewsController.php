@@ -11,12 +11,12 @@ class NewsController extends Controller
     /**
      * NewsController constructor.
      */
-    //apublic function __construct()
-    //a{
-    //a    $this->middleware('auth.back',[
-    //a        'except' => ['index','show']
-    //a    ]);
-    //a}
+    public function __construct()
+    {
+        $this->middleware('auth.back',[
+            'except' => ['index','show']
+        ]);
+    }
 
     /**
      * Display a listing of the news.

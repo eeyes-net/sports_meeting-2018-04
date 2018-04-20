@@ -12,12 +12,12 @@ class GamesController extends Controller
     /**
      * GamesController constructor.
      */
-    //public function __construct()
-    //{
-    //    $this->middleware('auth.back',[
-    //        'except' => ['index','show'],
-    //    ]);
-    //}
+    public function __construct()
+    {
+        $this->middleware('auth.back',[
+            'except' => ['index','show'],
+        ]);
+    }
 
     /**
      * Display a listing of the games.

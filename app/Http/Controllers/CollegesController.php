@@ -10,12 +10,12 @@ class CollegesController extends Controller
     /**
      * CollegesController constructor.gi
      */
-    //public function __construct()
-    //{
-    //    $this->middleware('auth.back',[
-    //        'except' => ['index','show','json'],
-    //    ]);
-    //}
+    public function __construct()
+    {
+        $this->middleware('auth.back',[
+            'except' => ['index','show','json'],
+        ]);
+    }
 
     /**
      * Display a listing of the colleges.
