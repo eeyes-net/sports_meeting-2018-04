@@ -157,7 +157,9 @@ class GamesController extends Controller
         if ($request->bronze_name_s)
         {
             $data['bronze_name_s'] = $request->post('bronze_name_s');
-        }     $game->update($data);
+        }
+        dd($data);
+        $game->update($data);
 
         session()->flash('success','赛事更新成功');
         return redirect()->route('games.show',$game->id);

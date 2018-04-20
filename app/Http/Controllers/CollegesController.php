@@ -118,9 +118,17 @@ class CollegesController extends Controller
     public function json()
     {
         $colleges = College::with('golden','silver','bronze','golden_s','silver_s','bronze_s')->get();
+        foreach ($colleges as $college)
+        {
+            $data[] = [
+                'id' => $college->id,
+                'name' => $college->name,
+                'golden' => $college->golden->count()+$college->golden_s->count(),
+            ];
+        }
         return response()->json([
             'code' => 200,
-            'data' => $colleges,
+            'data' => $data,
         ]);
     }
 }
