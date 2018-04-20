@@ -2,7 +2,7 @@
 * section-common
 */
 .sec-top{
-    background: #0066cc;
+    background: #37393b;
     height: 72px;
 }
 .title{
@@ -18,7 +18,7 @@
 }
 
 .content{
-    border:#0066cc 1px solid;
+    border:#37393b 1px solid;
     padding: 0;
     margin-top: 36px;
     box-shadow: 0px 0px 6px 1px;
@@ -50,15 +50,13 @@
 }
 .left-half{
     border-radius: 6px 0 0 6px;
-    border: 1px solid;
 }
 .right-half{
     border-radius: 0 6px 6px 0;
-    border: 1px solid;
 }
 .active{
-    border: 1px solid #0066cc;
-    color: #0066cc;
+    color: #37393b;
+    border-bottom: 4px solid #000;
 }
 .schedule-main{
     padding: 24px;
@@ -100,10 +98,14 @@ li{
 }
 .news>a>h3{
     font-size: 32px;
+    color: #37393b;
 }
 /*
 * ranks part
 */
+#ranks{
+    margin-bottom: 32px;
+}
 #title-rank{
     text-align: center;
 }
