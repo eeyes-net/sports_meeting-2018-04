@@ -37,6 +37,27 @@ class College extends Model
         return $this->hasMany('App\Game','bronze_id');
     }
 
+    public function golden_s()
+    {
+        return $this->hasMany('App\Game','golden_s_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function silver_s()
+    {
+        return $this->hasMany('App\Game','silver_s_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function bronze_s()
+    {
+        return $this->hasMany('App\Game','bronze_s_id');
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

@@ -10,12 +10,12 @@ class CollegesController extends Controller
     /**
      * CollegesController constructor.gi
      */
-    public function __construct()
-    {
-        $this->middleware('auth.back',[
-            'except' => ['index','show','json'],
-        ]);
-    }
+    //public function __construct()
+    //{
+    //    $this->middleware('auth.back',[
+    //        'except' => ['index','show','json'],
+    //    ]);
+    //}
 
     /**
      * Display a listing of the colleges.
@@ -96,11 +96,7 @@ class CollegesController extends Controller
 
         $data = [];
         $data['name'] = $request->post('name');
-        if ($request->has('medals'))
-        {
-            $data['medals'] = $request->post('medals');
-        }
-
+        $college->update($data);
         session()->flash('success','书院信息更新成功');
         return redirect()->route('colleges.show',$college->id);
     }
@@ -121,7 +117,7 @@ class CollegesController extends Controller
 
     public function json()
     {
-        $colleges = College::with('golden','silver','bronze')->get();
+        $colleges = College::with('golden','silver','bronze','golden_s','silver_s','bronze_s')->get();
         return response()->json([
             'code' => 200,
             'data' => $colleges,

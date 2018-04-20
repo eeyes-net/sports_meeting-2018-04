@@ -45,11 +45,27 @@ class Game extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function ballot()
+    public function golden_s()
     {
-        return $this->hasMany('App\Ballot');
+        return $this->belongsTo('App\College','golden_s_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function silver_s()
+    {
+        return $this->belongsTo('App\College','silver_s_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function bronze_s()
+    {
+        return $this->belongsTo('App\College','bronze_s_id');
     }
 
     /**

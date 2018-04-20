@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\College;
 use App\Game;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class GamesController extends Controller
@@ -11,12 +12,12 @@ class GamesController extends Controller
     /**
      * GamesController constructor.
      */
-    public function __construct()
-    {
-        $this->middleware('auth.back',[
-            'except' => ['index','show'],
-        ]);
-    }
+    //public function __construct()
+    //{
+    //    $this->middleware('auth.back',[
+    //        'except' => ['index','show'],
+    //    ]);
+    //}
 
     /**
      * Display a listing of the games.
@@ -99,40 +100,64 @@ class GamesController extends Controller
         $this->validate($request,[
             'name' => 'required',
             'class' => 'required',
-            'begins_at' => 'required',
         ]);
 
         $data = [];
         $data['name'] = $request->post('name');
         $data['class'] = $request->post('class');
-        $data['begins_at'] = $request->post('begins_at');
 
-        if ($request->has('golden'))
+        if ($request->begins_at)
+        {
+            $data['begins_at'] = $request->post('begins_at');
+        }
+        if ($request->golden)
         {
             $data['golden_id'] = $request->post('golden');
         }
-        if ($request->has('silver'))
+        if ($request->silver)
         {
             $data['silver_id'] = $request->post('silver');
         }
-        if ($request->has('bronze'))
+        if ($request->bronze)
         {
             $data['bronze_id'] = $request->post('bronze');
         }
-        if ($request->has('golden_name'))
+        if ($request->golden_name)
         {
             $data['golden_name'] = $request->post('golden_name');
         }
-        if ($request->has('silver_name'))
+        if ($request->silver_name)
         {
             $data['silver_name'] = $request->post('silver_name');
         }
-        if ($request->has('bronze_name'))
+        if ($request->bronze_name)
         {
             $data['bronze_name'] = $request->post('bronze_name');
         }
-
-        $game->update($data);
+        if ($request->golden_s)
+        {
+            $data['golden_s_id'] = $request->post('golden_s');
+        }
+        if ($request->silver_s)
+        {
+            $data['silver_s_id'] = $request->post('silver_s');
+        }
+        if ($request->bronze_s)
+        {
+            $data['bronze_s_id'] = $request->post('bronze_s');
+        }
+        if ($request->golden_name_s)
+        {
+            $data['golden_name_s'] = $request->post('golden_name_s');
+        }
+        if ($request->silver_name_s)
+        {
+            $data['silver_name_s'] = $request->post('silver_name_s');
+        }
+        if ($request->bronze_name_s)
+        {
+            $data['bronze_name_s'] = $request->post('bronze_name_s');
+        }     $game->update($data);
 
         session()->flash('success','赛事更新成功');
         return redirect()->route('games.show',$game->id);

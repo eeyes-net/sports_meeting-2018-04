@@ -6,7 +6,7 @@
 
 @section('content')
     <a href="{{ route('games.index') }}" class="btn btn-primary nav_btn">返回</a>
-    <button  class="btn btn-primary nav_btn" data-toggle="modal" data-target="#edit">编辑</button>
+    <a href="{{ route('games.edit',$game->id) }}"  class="btn btn-primary nav_btn">编辑</a>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h5>{{ $game->name }}</h5>
@@ -56,6 +56,36 @@
                     @if($game->bronze_id)
                         {{ $game->bronze->name }} {{ $game->bronze_name }}
                         @else
+                        暂无数据
+                    @endif
+                </h5>
+            </div>
+            <div class="row">
+                <h5 class="col-md-3">特长生金牌</h5>
+                <h5 class="col-md-9">
+                    @if($game->golden_s_id)
+                        {{ $game->golden_s->name }} {{ $game->golden_name_s }}
+                    @else
+                        暂无数据
+                    @endif
+                </h5>
+            </div>
+            <div class="row">
+                <h5 class="col-md-3">特长生银牌</h5>
+                <h5 class="col-md-9">
+                    @if($game->silver_s_id)
+                        {{ $game->silver_s->name }} {{ $game->silver_name_s }}
+                    @else
+                        暂无数据
+                    @endif
+                </h5>
+            </div>
+            <div class="row">
+                <h5 class="col-md-3">特长生铜牌</h5>
+                <h5 class="col-md-9">
+                    @if($game->bronze_s_id)
+                        {{ $game->bronze_s->name }} {{ $game->bronze_name_s }}
+                    @else
                         暂无数据
                     @endif
                 </h5>

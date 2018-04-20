@@ -11,12 +11,12 @@ class NewsController extends Controller
     /**
      * NewsController constructor.
      */
-    public function __construct()
-    {
-        $this->middleware('auth.back',[
-            'except' => ['index','show']
-        ]);
-    }
+    //apublic function __construct()
+    //a{
+    //a    $this->middleware('auth.back',[
+    //a        'except' => ['index','show']
+    //a    ]);
+    //a}
 
     /**
      * Display a listing of the news.
@@ -53,10 +53,9 @@ class NewsController extends Controller
             'content' => 'required',
         ]);
 
-        $content = Purifier::clean($request->post('content'));
         $news = News::create([
             'title' => $request->post('title'),
-            'content' => $content,
+            'content' => $request->post('content'),
         ]);
 
         session()->flash('success','新闻创建成功');

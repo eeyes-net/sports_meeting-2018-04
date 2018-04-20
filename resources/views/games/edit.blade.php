@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group form-part">
                     <label for="begins_at">开始时间</label>
-                    <input type="datetime-local" name="begins_at" class="form-control" id="begins_at" value="{{ $game->begins_at->toDateString().'T'.$game->begins_at->toTimeString() }}">
+                    <input type="datetime-local" name="begins_at" class="form-control" id="begins_at">
                 </div>
                 <div class="form-group form-part">
                     <label for="class" class="col-sm-2 control-label">田径赛</label>
@@ -80,6 +80,51 @@
                         </div>
                         <div class="col-sm-4">
                             <select name="bronze" id="bronze">
+                                @foreach($colleges as $college)
+                                    <option value="{{ $college->id }}">{{ $college->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-part">
+                    <label for="golden_name_s">特长生金牌获得者</label>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <input type="text" name="golden_name_s" class="form-control" id="bronze_name">
+                        </div>
+                        <div class="col-sm-4">
+                            <select name="golden_s" id="golden_s">
+                                @foreach($colleges as $college)
+                                    <option value="{{ $college->id }}">{{ $college->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-part">
+                    <label for="silver_name_s">特长生银牌获得者</label>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <input type="text" name="silver_name_s" class="form-control" id="bronze_name">
+                        </div>
+                        <div class="col-sm-4">
+                            <select name="silver_s" id="silver_s">
+                                @foreach($colleges as $college)
+                                    <option value="{{ $college->id }}">{{ $college->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-part">
+                    <label for="bronze_name_s">特长生铜牌获得者</label>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <input type="text" name="bronze_name_s" class="form-control" id="bronze_name">
+                        </div>
+                        <div class="col-sm-4">
+                            <select name="bronze_s" id="bronze_s">
                                 @foreach($colleges as $college)
                                     <option value="{{ $college->id }}">{{ $college->name }}</option>
                                 @endforeach
