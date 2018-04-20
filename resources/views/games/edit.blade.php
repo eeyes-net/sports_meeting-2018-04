@@ -95,6 +95,7 @@
                         </div>
                         <div class="col-sm-4">
                             <select name="golden_s" id="golden_s">
+                                <option>无</option>
                                 @foreach($colleges as $college)
                                     <option value="{{ $college->id }}">{{ $college->name }}</option>
                                 @endforeach
@@ -110,6 +111,7 @@
                         </div>
                         <div class="col-sm-4">
                             <select name="silver_s" id="silver_s">
+                                <option>无</option>
                                 @foreach($colleges as $college)
                                     <option value="{{ $college->id }}">{{ $college->name }}</option>
                                 @endforeach
@@ -125,6 +127,7 @@
                         </div>
                         <div class="col-sm-4">
                             <select name="bronze_s" id="bronze_s">
+                                <option>无</option>
                                 @foreach($colleges as $college)
                                     <option value="{{ $college->id }}">{{ $college->name }}</option>
                                 @endforeach
